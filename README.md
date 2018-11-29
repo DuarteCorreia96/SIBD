@@ -8,8 +8,6 @@
 - Permite adicionar consultas quando encontra o animal.
 
 ## Bugs e problemas:
-- Se nao colocar Owner Name aparece sempre o Zé.
-- Podesse colocar um client VAT qualquer e ele continua.
 - Garantir valores (por exemplo data da consulta não antes do animal ter nascido, etc)
 
 ## To do List
@@ -28,7 +26,7 @@
     - [x] Table with animals matching the checks
     - [x] Insert new animal with client being the owner
   
-- [x] 2ª parte - Web pages to support the access and registry of information associated to a consult
+- [ ] 2ª parte - Web pages to support the access and registry of information associated to a consult
   - [x] Clicking on animal should:
     - [x] Go to another page listing all consults
   - [x] Clicking on consult should:
