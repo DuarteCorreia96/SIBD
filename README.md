@@ -15,17 +15,17 @@
 ## To do List
 
 ###  HTML  
-- [ ] 1ª parte
+- [x] 1ª parte
   - [x] Form to get:
     - [x] $Client_VAT
     - [x] $Animal_Name
     - [x] $Owner_Name
-  - [ ] Check:
+  - [x] Check:
     - [x] Client with that VAT
     - [x] $Animal_Name com Owner o com LIKE $Owner_Name
-    - [ ] Consultas anteriores com esse animal e client
-  - [ ] Create:
-    - [ ] Table with animals matching the checks
+    - [x] Consultas anteriores com esse animal e client
+  - [x] Create:
+    - [x] Table with animals matching the checks
     - [x] Insert new animal with client being the owner
   
 - [x] 2ª parte - Web pages to support the access and registry of information associated to a consult

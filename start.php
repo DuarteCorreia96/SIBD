@@ -16,7 +16,7 @@
       
       $form_key = ['Client_VAT', 'Owner_Name','Animal_Name'];
       $form_types = ['number', 'text', 'text'];
-      $form_action = "start_next.php";
+      $form_action = "start_next_2.php";
       create_form($form_key, $form_types, $form_action);
 
     ?>

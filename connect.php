@@ -35,7 +35,7 @@
 
       $connection->beginTransaction();
 
-      for($i = 0, $count = count($querys); $i < $count; $i++){ {
+      for($i = 0, $count = count($querys); $i < $count; $i++){ 
         $stmt = $connection->prepare($querys[$i]);
         $result = $stmt->execute($arguments[$i]);
         if($result == FALSE){

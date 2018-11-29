@@ -42,7 +42,7 @@
                 FROM  _person p, _client cl 
                 WHERE p.name = ? 
                   AND p.VAT = cl.VAT;"
-              ;
+      ;
       $args = [(string) $Own_name];
       $stmt_VAT = connect_db($query, $args); 
       $result = $stmt_VAT->fetch();

@@ -15,16 +15,24 @@
       include_once "create.php";
       include_once "list_animals.php";
       
-      $vars_names = ['Owner_VAT', 'Owner_Name', 'Animal_Name'];
+      $vars_names = ['Owner_Name', 'Animal_Name'];
       foreach ($vars_names as $key) {
         if(!empty($_REQUEST[$key])){
           $_SESSION[$key] = $_REQUEST[$key];
         }
       }
-
-      $VAT = $_SESSION['Owner_VAT'];
+      
       $Own_name = $_SESSION['Owner_Name'];
       $Ani_name = $_SESSION['Animal_Name'];
+      
+      #Get the VAT from the owner
+      $query = "SELECT p.VAT FROM  _person p, _client cl WHERE p.name = ? AND p.VAT = cl.VAT;";
+      $args = [(string) $Own_name];
+      $stmt_VAT = connect_db($query, $args); 
+      $result = $stmt_VAT->fetch();
+      $_SESSION['Owner_VAT'] = $result[0];
+      
+      $VAT = $_SESSION['Owner_VAT'];
 
       echo("<h1>Records of animal '$Ani_name' of '$Own_name' with Vat = $VAT </h1>\n");
 
@@ -48,12 +56,10 @@
         $href = 'consult_descr.php';
       
         create_tableh($table_headers, $stmt, $var_name, $href);
-        list_animals();
         
       } else {
 
         echo("<h3> No consults for animal '$Ani_name' found</h3>");
-        list_animals();
       }
 
       $last = $_SESSION['Last_page'];
