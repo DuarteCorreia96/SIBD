@@ -74,6 +74,17 @@
         
           create_tableh($table_headers, $stmt, $var_name, $href);
           
+          #Adicionar nova consulta
+          echo("<div class='hr'></div>");
+
+          echo("<center><h2>Insert new consult for animal '$Ani_name'  with VAT_Owner: $VAT_owner</h2></center>");
+
+          $form_key = ['date_timestamp', 's', 'o', 'a', 'p', 'Driver_VAT', 'Vet_VAT', 'Weight'];
+          $form_types = ['datetime-local', 'text', 'text', 'text', 'text', 'number', 'number', 'number'];
+          $form_action = "consult_inserted.php";
+          create_form($form_key, $form_types, $form_action);
+          #############################
+          
         } else {
 
           echo("<h3> No consults for animal '$Ani_name' found</h3>");
