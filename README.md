@@ -59,4 +59,4 @@
 - [x] Trigger 2
 - [x] Trigger 3
 - [x] Function 1
-- [ ] Procedure 1
+- [x] Procedure 1
