@@ -50,7 +50,7 @@
 
 ### Functions, Triggers and Stored Procedures
 - [x] Trigger 1
-- [ ] Trigger 2
+- [x] Trigger 2
 - [ ] Trigger 3
-- [ ] Function 1
+- [x] Function 1
 - [ ] Procedure 1
