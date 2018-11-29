@@ -50,5 +50,6 @@
     }
 
     $connection = null;
+    return TRUE;
   }
 ?>
