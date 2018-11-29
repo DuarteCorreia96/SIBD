@@ -11,7 +11,6 @@
     <?php
 
       include_once "connect.php";
-      include_once "TableRows.php";
       include_once "list_animals.php";
 
       $vars_names = ['Client_VAT', 'Owner_Name','Animal_Name', 'Animal_Race', 'Birth_Year'];
