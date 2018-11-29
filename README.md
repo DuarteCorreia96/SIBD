@@ -9,13 +9,13 @@
 ## To do List
 
 ###  HTML  
--[x] 1ª parte
--[x] 2ª parte
--[]  3ª parte
+- [x] 1ª parte
+- [x] 2ª parte
+- []  3ª parte
 
 ### Functions, Triggers and Stored Procedures
--[x] Trigger 1
--[]  Trigger 2
--[]  Trigger 3
--[]  Function 1
--[]  Procedure 1
+- [x] Trigger 1
+- []  Trigger 2
+- []  Trigger 3
+- []  Function 1
+- []  Procedure 1
