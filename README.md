@@ -9,13 +9,21 @@
 ## To do List
 
 ###  HTML  
-- [x] 1ª parte
-- [x] 2ª parte
-- [ ]  3ª parte
+- [ ]   1ª parte
+        - [x]   Form to get:
+                - [x]   $Client_VAT
+                - [x]   $Animal_Name
+                - [x]   $Owner_Name
+        - [ ]   Check:
+                - [x]   Client with that VAT
+                - [x]   $Animal_Name com Owner o com LIKE $Owner_Name
+                - [ ]   Consultas anteriores com esse animal e client
+- [x]   2ª parte
+- [ ]   3ª parte
 
 ### Functions, Triggers and Stored Procedures
 - [x] Trigger 1
-- [ ]  Trigger 2
-- [ ]  Trigger 3
-- [ ]  Function 1
-- [ ]  Procedure 1
+- [ ] Trigger 2
+- [ ] Trigger 3
+- [ ] Function 1
+- [ ] Procedure 1
