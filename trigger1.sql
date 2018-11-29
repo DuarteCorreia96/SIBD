@@ -1,8 +1,17 @@
 drop TRIGGER IF EXISTS check_vet;
 drop TRIGGER IF EXISTS check_phone;
+drop TRIGGER IF EXISTS animal_age;
 drop FUNCTION if EXISTS num_consults;
 
 delimiter $$
+
+CREATE TRIGGER animal_age BEFORE INSERT ON _animal
+    for each ROW
+        BEGIN  
+           SET new.age=YEAR(CURDATE())-new.birth_year;
+
+END $$
+
 CREATE TRIGGER check_vet BEFORE INSERT ON _veterinary
     for each row 
     BEGIN
@@ -33,6 +42,8 @@ CREATE FUNCTION num_consults(animal_name varchar(255), year INTEGER)
         return count_consult;
 
 END $$
+
+
 
 delimiter ;
 
