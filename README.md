@@ -30,7 +30,7 @@
   
 - [x] 2ª parte - Web pages to support the access and registry of information associated to a consult
   - [x] Clicking on animal should:
-    - [x ] Go to another page listing all consults
+    - [x] Go to another page listing all consults
   - [x] Clicking on consult should:
     - [x] Go to another page showing all info:
       - [x] Characteristics of the animal (e.g., gender, age, weight, etc.)
