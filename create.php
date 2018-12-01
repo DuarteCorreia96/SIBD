@@ -38,12 +38,12 @@
       for($i = 0, $count = count($headers); $i < $count; $i++){
 
         if($i == $button[3] && $button != array(NULL, NULL, 0, -1)){
-          
+
           $value = $row[$button[2]];
           echo("<td style='height:20px'>");
-          echo("<form action ='$button[0]' method='post' style='margin-bottom: 0px'>");
+          echo("<form action ='$button[0]' method='post' style='margin-bottom: 0px;width: auto;padding: 0px; border: 0px; border-radius: 0px;'>");
           echo("<input type='hidden' id='$button[1]' name='$button[1]' value='$value'>");
-          echo("<center><input type='submit' value='New'></center>");
+          echo("<center><input type='submit' value='New' style='width:auto;margin-left: 0px;'></center>");
           echo("</form>");
           echo("</td>"); 
 
