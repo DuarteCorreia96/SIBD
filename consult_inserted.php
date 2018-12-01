@@ -67,23 +67,22 @@
         AND cl.VAT = a.VAT
         AND a.name = c.name
         AND c.VAT_owner = cl.VAT;"
-        ;
+      ;
 
-        $args  = [(string) $Animal_name, (string) $Owner_name, (int) $Owner_VAT];
-        $stmt = connect_db($query, $args);
+      $args  = [(string) $Animal_name, (string) $Owner_name, (int) $Owner_VAT];
+      $stmt = connect_db($query, $args);
 
-        echo("<h1>Records of animal '$Animal_name' of '$Owner_name' with Vat = $Owner_VAT </h1>");
+      echo("<h1>Records of animal '$Animal_name' of '$Owner_name' with Vat = $Owner_VAT </h1>");
 
-        if ($stmt->rowCount() !== 0){ 
+      if ($stmt->rowCount() !== 0){ 
 
         $table_headers = ['Timestamp', 'VAT_client','VAT_vet'];
         $var_name = 'Con_Timestamp';
         $href = 'consult_descr.php';
 
         create_tableh($table_headers, $stmt, $var_name, $href);
-        }
+      }
       ##########################################
-
       
       $last = $_SESSION['Last_page'];
       echo("<p></p><a href=$last> Go to Last page </a>");
