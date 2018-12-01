@@ -49,10 +49,10 @@
 
         } elseif($i == $column[0] && $href != NULL && $var_name != NULL){
 
-          $var_name = $row[$column[1]];
+          $var_value = $row[$column[1]];
           $write = $row[$column[0]];
           echo("<td style='width:150px;border:1px solid black;'>");
-          echo("<a href='$href?$var_name=$var_name'</a>$write");
+          echo("<a href='$href?$var_name=$var_value'</a>$write");
           echo("</td>");
 
         } else {
