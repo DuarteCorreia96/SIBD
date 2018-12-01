@@ -6,7 +6,6 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
   </head> 
   <body>
     <?php
@@ -51,11 +50,12 @@
       $stmt  = connect_db($query, $args);
       if ($stmt->rowCount() !== 0){ 
           
-        $table_headers = ['Timestamp', 'VAT_client','VAT_vet'];
+        $table_headers = ['Timestamp', 'VAT_client','VAT_vet', 'Blood Test'];
         $var_name = 'Con_Timestamp';
         $href = 'consult_descr.php';
-      
-        create_tableh($table_headers, $stmt, $var_name, $href);
+        $column = [0, 0]; // 1st: column where to click, 2nd: column to referentiate 
+        $button = ['consult_descr.php', 'Con_Timestamp', 0, 3]; // [reference, var_name, column with the value]
+        create_tableh($table_headers, $stmt, $var_name, $href, $column, $button);
         
       } else {
 

@@ -24,27 +24,45 @@
 #--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
 
-  function create_tableh($headers, $stmt, $var_name = NULL, $href = NULL, $column_ref = 0, $column_click = 0){
+  function create_tableh($headers, $stmt, $var_name = NULL, $href = NULL, $column = [0, 0], $button = array(NULL, NULL, 0, -1)){
 
     echo( "<table style='border: solid 1px black;'><tr>");
     foreach ($headers as $key) {
       echo("<th>$key</th>");
     }
+    echo("</tr>");
 
-    echo("</tr>\n");
     while($row = $stmt->fetch()){
       
       echo("<tr>");
-      for($i = 0, $count = count($row); $i < $count; $i++){
+      for($i = 0, $count = count($headers); $i < $count; $i++){
 
-        if($i == $column_click && $href != NULL && $var_name != NULL) {
-          echo("<td style='width:150px;border:1px solid black;'>
-            <a href='$href?$var_name=$row[$column_ref]'</a>$row[$column_click]</td>"); 
+        if($i == $button[3] && $button != array(NULL, NULL, 0, -1)){
+          
+          $value = $row[$button[2]];
+          echo("<td style='height:20px'>");
+          echo("<form action ='$button[0]' method='post' style='margin-bottom: 0px'>");
+          echo("<input type='hidden' id='$button[1]' name='$button[1]' value='$value'>");
+          echo("<center><input type='submit' value='New'></center>");
+          echo("</form>");
+          echo("</td>"); 
+
+        } elseif($i == $column[0] && $href != NULL && $var_name != NULL){
+
+          $var_name = $row[$column[1]];
+          $write = $row[$column[0]];
+          echo("<td style='width:150px;border:1px solid black;'>");
+          echo("<a href='$href?$var_name=$var_name'</a>$write");
+          echo("</td>");
+
         } else {
-          echo("<td style='width:150px;border:1px solid black;'>".$row[$i]."</td>");
+
+          echo("<td style='width:150px;border:1px solid black;'>");
+          echo("$row[$i]");
+          echo("</td>");
         }
       }
-      echo("</tr>\n");
+      echo("</tr>");
     }  
     echo("</table>");
   }

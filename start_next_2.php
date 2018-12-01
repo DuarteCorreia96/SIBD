@@ -62,9 +62,8 @@
           $table_headers = ['Owner Name', 'Animal Name'];
           $var_name = 'Owner_Name';
           $href = 'show_consults.php';
-          $column_ref = 0; 
-          $column_click = 1;    
-          create_tableh($table_headers, $stmt, $var_name, $href, $column_ref, $column_click);
+          $column = [1, 0]; // 1st: column where to click, 2nd: column to referentiate 
+          create_tableh($table_headers, $stmt, $var_name, $href, $column);
           
         } else {
 
