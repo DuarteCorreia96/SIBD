@@ -42,7 +42,7 @@
     - [ ] Diagnostic codes
 
 - [ ] 3ª parte - Web pages to support the registry of information associated to a procedure of the type blood test
-  - [ ] On list of consults create option to enter results for a test
+  - [x] On list of consults create option to enter results for a test
   - [ ] Selecting that option should go to page with form:
     - [ ] VAT of the assistant
     - [ ] Values associated to indicators:
