@@ -51,10 +51,7 @@
       $args = [(string) $code, (string) $descrip ];
       $stmt = connect_db($query, $args);*/
    
-      $query = "INSERT INTO _consult_diagnosis (code, name, VAT_owner, date_timestamp) VALUES
-                 ( ? , ?, ?, ?) ;"  
-      ;
-
+      $query = "INSERT INTO _consult_diagnosis (code, name, VAT_owner, date_timestamp) VALUES ( ? , ?, ?, ?) ;";
       $args = [(string) $Code, (string) $Animal_name , (int) $Owner_VAT, $date_timestamp ];
       $stmt = connect_db($query, $args);
 

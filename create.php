@@ -5,20 +5,26 @@
     
     for($i = 0, $count = count($form_keys); $i <$count; $i++){
 
+      $key_f = str_replace('_',' ',$form_keys[$i]);
       if(strcmp($form_types[$i], 'year') == 0){
 
-        echo("<div> <label for='$form_keys[$i]'>".str_replace('_',' ',$form_keys[$i]).": </label> 
-          <input type='number' min='1950' max='2018' value='2015' id='$form_keys[$i]'  
-          name ='$form_keys[$i]'/> </div>");
+        echo("<div>"); 
+        echo("<label for='$form_keys[$i]'>$key_f: </label>"); 
+        echo("<input type='number' min='1950' max='2018' value='2015' id='$form_keys[$i]' name ='$form_keys[$i]'/>");
+        echo("</div>");
 
       } else {
 
-        echo("<div> <label for='$form_keys[$i]'>".str_replace('_',' ',$form_keys[$i]).": </label> 
-          <input type='$form_types[$i]' id='$form_keys[$i]'  name ='$form_keys[$i]'/> </div>");
+        echo("<div>");
+        echo("<label for='$form_keys[$i]'>$key_f: </label> ");
+        echo("<input type='$form_types[$i]' id='$form_keys[$i]'  name ='$form_keys[$i]'/>");
+        echo("</div>");
       }
     }
 
-    echo("<div class='button'> <input type='submit' value='Submit'/> </div></form>");
+    echo("<div class='button'>"); 
+    echo("<input type='submit' value='Submit'/>");
+    echo("</div></form>");
   }
 
 #--------------------------------------------------------------------------------------------------
