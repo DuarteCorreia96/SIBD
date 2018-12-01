@@ -24,7 +24,7 @@
 #--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
 
-  function create_tableh($headers, $stmt, $var_name = NULL, $href = NULL){
+  function create_tableh($headers, $stmt, $var_name = NULL, $href = NULL, $column_ref = 0, $column_click = 0){
 
     echo( "<table style='border: solid 1px black;'><tr>");
     foreach ($headers as $key) {
@@ -37,9 +37,9 @@
       echo("<tr>");
       for($i = 0, $count = count($row); $i < $count; $i++){
 
-        if($i == 0 && $href != NULL && $var_name != NULL) {
+        if($i == $column_click && $href != NULL && $var_name != NULL) {
           echo("<td style='width:150px;border:1px solid black;'>
-            <a href='$href?$var_name=$row[0]'</a>$row[0]</td>"); 
+            <a href='$href?$var_name=$row[$column_ref]'</a>$row[$column_click]</td>"); 
         } else {
           echo("<td style='width:150px;border:1px solid black;'>".$row[$i]."</td>");
         }
