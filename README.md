@@ -11,6 +11,9 @@
 - Garantir valores (por exemplo data da consulta não antes do animal ter nascido, etc)
 
 ## To do List
+- Perguntar ao Professor se na criação da consulta se cria um código (nao faz muito sentido, os codigos deviam
+estar pre defenidor), ou um consult_diagnosis. E Se é apenas um, ou mais.
+
 
 ###  HTML  
 - [x] 1ª parte
@@ -39,18 +42,18 @@
     - [x] VAT for the veterinary doctor
     - [x] Animal’s weight
     - [x] SOAP notes
-    - [ ] Diagnostic codes
+    - [x] Diagnostic codes
 
 - [ ] 3ª parte - Web pages to support the registry of information associated to a procedure of the type blood test
   - [x] On list of consults create option to enter results for a test
-  - [ ] Selecting that option should go to page with form:
-    - [ ] VAT of the assistant
+  - [x] Selecting that option should go to page with form:
+    - [x] VAT of the assistant
     - [ ] Values associated to indicators:
       - [ ] White blood cell count
       - [ ] Number of neutrophils
       - [ ] Number of lymphocytes
       - [ ] Number of monocytes
-  - [ ] Insertion made in context of single transaction
+  - [x] Insertion made in context of single transaction
 
 ### Functions, Triggers and Stored Procedures
 - [x] Trigger 1
