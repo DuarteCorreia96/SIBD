@@ -16,7 +16,8 @@
       } else {
 
         echo("<div>");
-        echo("<label for='$form_keys[$i]'>$key_f: </label> ");
+        if(strcmp($form_types[$i], 'hidden') != 0)
+          echo("<label for='$form_keys[$i]'>$key_f: </label> ");
         echo("<input type='$form_types[$i]' id='$form_keys[$i]'  name ='$form_keys[$i]'");
         if(isset($default_values) && $default_values[$i] != NULL)
           echo("value='$default_values[$i]'");      

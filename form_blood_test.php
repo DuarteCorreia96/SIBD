@@ -20,10 +20,13 @@
       $_SESSION['Con_Timestamp'] = $_REQUEST['Con_Timestamp'];
       
       echo("<center><h2>Insert Blood-Test information</h2></center>");
-      $form_key = [  'Num', 'Procedure_Descrip', 'VAT_Assistant', 'Type', 'Indicator_Name', 'Indicator_Value'];
-      $form_types = ['number', 'text', 'number', 'text', 'text', 'number'];
+
+      $Indicators = ['White_Blood_Cells', 'Neutrophils', 'Lymphocytes', 'Monocytes'];
+      $form_key = array_merge(['Num', 'Procedure_Descrip', 'VAT_Assistant', 'Type'], $Indicators, ['Indicators_Name']);
+      $form_types = ['number', 'text', 'number', 'text', 'number', 'number', 'number', 'number', 'hidden'];
       $form_action = "insert_procedure.php";
-      create_form($form_key, $form_types, $form_action);
+      $default_values = [NULL, NULL, NULL, 'Blood', 100, 20, 100, 50, base64_encode(serialize($Indicators))];
+      create_form($form_key, $form_types, $form_action, $default_values);
       
       #######################################   
       $last = $_SESSION['Last_page'];

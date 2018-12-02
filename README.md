@@ -44,15 +44,15 @@ estar pre defenidor), ou um consult_diagnosis. E Se é apenas um, ou mais.
     - [x] SOAP notes
     - [x] Diagnostic codes
 
-- [ ] 3ª parte - Web pages to support the registry of information associated to a procedure of the type blood test
+- [x] 3ª parte - Web pages to support the registry of information associated to a procedure of the type blood test
   - [x] On list of consults create option to enter results for a test
   - [x] Selecting that option should go to page with form:
     - [x] VAT of the assistant
-    - [ ] Values associated to indicators:
-      - [ ] White blood cell count
-      - [ ] Number of neutrophils
-      - [ ] Number of lymphocytes
-      - [ ] Number of monocytes
+    - [x] Values associated to indicators:
+      - [x] White blood cell count
+      - [x] Number of neutrophils
+      - [x] Number of lymphocytes
+      - [x] Number of monocytes
   - [x] Insertion made in context of single transaction
 
 ### Functions, Triggers and Stored Procedures
