@@ -54,7 +54,7 @@
         $var_name = 'Con_Timestamp';
         $href = 'show_consult_descr.php';
         $column = [0, 0]; // 1st: column where to click, 2nd: column to referentiate 
-        $button = ['insert_blood_test.php', 'Con_Timestamp', 0, 3]; // [reference, var_name, column with the value, column for the button]
+        $button = ['form_blood_test.php', 'Con_Timestamp', 0, 3]; // [reference, var_name, column with the value, column for the button]
         create_tableh($table_headers, $stmt, $var_name, $href, $column, $button);
         
       } else {
