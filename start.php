@@ -1,7 +1,6 @@
 <?php 
   session_start(); 
   session_unset();
-  $_SESSION['Curr_page'] = 'start.php';
 ?>
 <html>
   <head>
@@ -16,7 +15,7 @@
       
       $form_key = ['Client_VAT', 'Owner_Name','Animal_Name'];
       $form_types = ['number', 'text', 'text'];
-      $form_action = "start_next_2.php";
+      $form_action = "show_animal.php";
       $default_values = [4, "Silva", "Totti"];
       create_form($form_key, $form_types, $form_action, $default_values);
 

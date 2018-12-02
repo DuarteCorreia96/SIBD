@@ -1,7 +1,6 @@
 <?php 
   session_start(); 
-  $_SESSION['Last_page'] = $_SESSION['Curr_page'];
-  $_SESSION['Curr_page'] = 'start_next.php';
+  $_SESSION['Last_page'] = 'start.php';
 ?>
 <html>
   <head>
@@ -96,7 +95,7 @@
             echo("<center><h2>Insert new animal for client '$Own_name' with VAT: $VAT</h2></center>");
             $form_key = ['Animal_Name', 'Animal_Race','Birth_Year'];
             $form_types = ['text', 'text', 'year'];
-            $form_action = "animal_inserted.php";
+            $form_action = "insert_animal.php";
             create_form($form_key, $form_types, $form_action);
 
           } else {

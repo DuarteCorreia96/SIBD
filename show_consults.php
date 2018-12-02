@@ -1,7 +1,6 @@
 <?php 
   session_start(); 
-  $_SESSION['Last_page'] = $_SESSION['Curr_page'];
-  $_SESSION['Curr_page'] = 'show_consults.php';
+  $_SESSION['Last_page'] = 'show_animal.php';
 ?>
 <html>
   <head>
@@ -53,9 +52,9 @@
           
         $table_headers = ['Timestamp', 'VAT_client','VAT_vet', 'Blood Test'];
         $var_name = 'Con_Timestamp';
-        $href = 'consult_descr.php';
+        $href = 'show_consult_descr.php';
         $column = [0, 0]; // 1st: column where to click, 2nd: column to referentiate 
-        $button = ['blood_test.php', 'Con_Timestamp', 0, 3]; // [reference, var_name, column with the value, column for the button]
+        $button = ['insert_blood_test.php', 'Con_Timestamp', 0, 3]; // [reference, var_name, column with the value, column for the button]
         create_tableh($table_headers, $stmt, $var_name, $href, $column, $button);
         
       } else {
@@ -70,7 +69,7 @@
       
       $form_key = ['date_timestamp', 's', 'o', 'a', 'p', 'Driver_VAT', 'Vet_VAT', 'Weight', 'Code'];
       $form_types = ['datetime-local', 'text', 'text', 'text', 'text', 'number', 'number', 'number', 'text'];
-      $form_action = "consult_inserted.php";
+      $form_action = "insert_consult.php";
       create_form($form_key, $form_types, $form_action);
       #############################
     
