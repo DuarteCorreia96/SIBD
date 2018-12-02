@@ -11,6 +11,11 @@
   <body>
     <?php
       
+      if(isset($_SESSION['ErrorDB'])){
+        echo("<p>".$_SESSION['ErrorDB']."</p>");
+        unset($_SESSION['ErrorDB']);
+      }
+
       include_once "list_animals.php";
       list_animals();
 

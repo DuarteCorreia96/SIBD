@@ -10,6 +10,11 @@
   <body>
     <?php
 
+      if(isset($_SESSION['ErrorDB'])){
+        echo("<p>".$_SESSION['ErrorDB']."</p>");
+        unset($_SESSION['ErrorDB']);
+      }
+
       include_once "create.php";
 
       $_SESSION['Con_Timestamp'] = $_REQUEST['Con_Timestamp'];

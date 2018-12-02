@@ -14,6 +14,7 @@
     }
     catch(PDOException $e) {
       echo "Error: " . $e->getMessage();
+      $_SESSION['ErrorDB'] = $e->getMessage();
     }
 
     $result = $stmt->setFetchMode(PDO::FETCH_NUM);
@@ -47,6 +48,7 @@
     }
     catch(PDOException $e) {
       echo "Error: " . $e->getMessage();
+      $_SESSION['ErrorDB'] = $e->getMessage();
     }
 
     $connection = null;

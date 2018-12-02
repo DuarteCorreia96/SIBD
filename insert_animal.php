@@ -22,6 +22,5 @@
   $stmt = connect_db($query, $args);
 
   header("Location: show_animal.php");
-
 ?>
 
