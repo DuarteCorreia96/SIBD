@@ -1,5 +1,5 @@
 <?php
-  function create_form($form_keys, $form_types, $form_action){
+  function create_form($form_keys, $form_types, $form_action, $default_values = NULL){
 
     echo("<form action ='$form_action' method='post'>");
     
@@ -17,8 +17,10 @@
 
         echo("<div>");
         echo("<label for='$form_keys[$i]'>$key_f: </label> ");
-        echo("<input type='$form_types[$i]' id='$form_keys[$i]'  name ='$form_keys[$i]'/>");
-        echo("</div>");
+        echo("<input type='$form_types[$i]' id='$form_keys[$i]'  name ='$form_keys[$i]'");
+        if(isset($default_values) && $default_values[$i] != NULL)
+          echo("value='$default_values[$i]'");      
+        echo("/></div>");
       }
     }
 
