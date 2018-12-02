@@ -1,7 +1,5 @@
 <?php 
   session_start(); 
-  $_SESSION['Last_page'] = 'show_consults.php';
-
   include_once "connect.php";
   include_once "create.php";
   

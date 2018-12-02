@@ -1,6 +1,5 @@
 <?php 
-  session_start(); 
-  $_SESSION['Last_page'] = 'show_animal';
+  session_start();
 
   include_once "connect.php";
   include_once "list_animals.php";
