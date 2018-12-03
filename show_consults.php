@@ -96,7 +96,7 @@
       $last = $_SESSION['Last_page'];
       echo("<p></p><a href=$last> Go to Last page </a>");
       echo("<p></p><a href='start.php'> Go to Start </a>");
-      echo("<p></p><a href='animal_list.php'> Show list of animals </a>");
+      echo("<p></p><a href='show_animal_list.php'> Show list of animals </a>");
 
     ?>
   </body>
