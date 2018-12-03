@@ -33,7 +33,7 @@
 
       echo("<h1>Record for consult on '$Con_Time' of animal '$Ani_name' of '$Own_name' with Vat = $VAT </h1>\n");
 
-      $query = "SELECT c.VAT_Client, c.VAT_VET, a.gender, c.weight, YEAR(c.date_timestamp) - a.birth_year, c.s, c.o, c.a, c.p
+      $query = "SELECT c.VAT_Client, c.VAT_VET, a.gender, c.weight, a.age, c.s, c.o, c.a, c.p
         FROM _consult c, _animal a 
         WHERE c.name = ? 
           AND c.VAT_owner = ? 
@@ -49,7 +49,7 @@
       echo("<p>VAT of Client: $result[0] </p>");
       echo("<p>VAT of veterinary: $result[1] </p>");
       echo("<p>Gender of the animal: $result[2] </p>");
-      echo("<p>Age of the animal: $result[4] years (at the time of the consult)</p>");
+      echo("<p>Age of the animal: $result[4] [years] </p>");
 
       echo("<div class='hr'></div>");
       echo("<h2> Information obtained in consult:</h2>");
