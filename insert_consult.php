@@ -25,7 +25,7 @@
 
   $date = $_REQUEST['date'];
   $time = $_REQUEST['time'];         
-  $date_timestamp = $_SESSION['date']." ".$_SESSION['time'].":00";
+  $date_timestamp = $date." ".$time;
 
   #Inserir dados na Database - Consulta, e diagnosis code
   $query = "INSERT INTO _consult (name, VAT_owner, date_timestamp , s, o, a, p, VAT_client, VAT_vet, weight) VALUES
