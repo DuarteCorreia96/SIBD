@@ -146,7 +146,7 @@ INSERT INTO _medication VALUES
 ('Bruffen', 'Lab1', '500mg'),
 ('Paracetamol', 'LabCORP', '100mg'),
 ('Penicilina', 'LabIndustries', '10mg'),
-('AntiEstupidez', 'LabEducaçao', '75mg');
+('AntiEstupidez', 'LabEducacao', '75mg');
 
 /*Prescription*/
 INSERT INTO _prescription (code, name, VAT_owner, date_timestamp, name_med, lab, dosage) VALUES 
