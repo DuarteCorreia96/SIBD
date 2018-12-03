@@ -185,10 +185,10 @@ INSERT INTO _indicator(name, reference_value, units) VALUES
 ('creatine level',   '0.8', 'milligrams');
 
 INSERT INTO _produced_indicator(name,VAT_owner,date_timestamp,num,indicator_name,value) VALUES
-('Teco',        082, '2017-01-03  10:24:26','teste sangue', 'indicadorA',       87),
-('Teco',        082, '2017-01-03  10:24:26','teste sangue', 'indicadorB',       130),
-('Teco',        082, '2017-01-03  10:24:26','teste sangue', 'creatine level',   0.8),
-('Amilcar',     018, '2017-10-05  12:24:46','teste urina' , 'indicadorD',       110),
-('Amilcar',     018, '2017-10-05  12:24:46','teste sangue', 'indicadorE',       187),
-('Amilcar',     018, '2017-10-05  12:24:46','teste sangue', 'creatine level',   1.3),
-('Michu',       007, '2017-06-05  10:10:10','teste sangue', 'creatine level',   1.2);
+('Teco',        082, '2017-01-03  10:24:26','teste sangue', 'White Blood Cells', 87),
+('Teco',        082, '2017-01-03  10:24:26','teste sangue', 'Neutrophils',       130),
+('Teco',        082, '2017-01-03  10:24:26','teste sangue', 'creatine level',    0.8),
+('Amilcar',     018, '2017-10-05  12:24:46','teste urina' , 'Monocytes',         110),
+('Amilcar',     018, '2017-10-05  12:24:46','teste sangue', 'indicadorE',        187),
+('Amilcar',     018, '2017-10-05  12:24:46','teste sangue', 'creatine level',    1.3),
+('Michu',       007, '2017-06-05  10:10:10','teste sangue', 'creatine level',    1.2);
