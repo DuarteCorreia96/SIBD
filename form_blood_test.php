@@ -20,7 +20,7 @@
 
       $_SESSION['Con_Timestamp'] = $_REQUEST['Con_Timestamp'];
 
-      $query = "SELECT * FROM _assistant;";
+      $query = "SELECT VAT FROM _assistant;";
       $stmt = connect_db($query); 
       
       $VAT_assis = array();
