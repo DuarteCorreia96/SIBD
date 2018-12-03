@@ -40,7 +40,7 @@
           AND c.date_timestamp = ?
           AND a.name = c.name
           AND a.VAT = c.VAT_owner;";
-      $args  = [ (string) $Ani_name, (int) $VAT, $Con_Time];
+      $args  = [ (string) $Ani_name, (int) $VAT, (string) $Con_Time];
       $stmt  = connect_db($query, $args);
       
       // não é preciso verificar se existem consultas visto ter-se chegado
@@ -66,7 +66,7 @@
         WHERE cd.name = ? 
           AND cd.VAT_owner = ? 
           AND cd.date_timestamp = ?;";
-      $args  = [(string) $Ani_name, (int) $VAT, $Con_Time];
+      $args  = [(string) $Ani_name, (int) $VAT, (string) $Con_Time];
       $stmt  = connect_db($query, $args);
 
       if ($stmt->rowCount() !== 0){ 
