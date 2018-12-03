@@ -3,7 +3,7 @@
   include_once "connect.php";
   include_once "create.php";
   
-  $vars_names = [ 'Animal_Name', 'Owner_VAT', 'date_timestamp',  's', 'o', 'a', 'p', 'Driver_VAT', 'Vet_VAT', 'Weight', 'Code'];
+  $vars_names = [ 'Animal_Name', 'Owner_VAT', 'date_timestamp',  's', 'o', 'a', 'p', 'Client_VAT', 'Vet_VAT', 'Weight', 'Code'];
   foreach ($vars_names as $key) {
     if(!empty($_REQUEST[$key])){
       $_SESSION[$key] = $_REQUEST[$key];
@@ -11,7 +11,7 @@
   }
 
   #Obter dados do formulário para variáveis
-  $Driver_VAT = $_SESSION['Driver_VAT'];
+  $Client_VAT = $_SESSION['Client_VAT'];
   $Owner_VAT = $_SESSION['Owner_VAT'];
   $Animal_name = $_SESSION['Animal_Name'];
   $date_timestamp = $_SESSION['date_timestamp'];

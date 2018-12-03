@@ -38,6 +38,12 @@
       
       $VAT = $_SESSION['Owner_VAT'];
 
+      $query = "SELECT birth_year FROM  _animal WHERE name = ? AND VAT = ?;";
+      $args = [(string) $Ani_name, $VAT];
+      $stmt_VAT = connect_db($query, $args); 
+      $result = $stmt_VAT->fetch();
+      $_SESSION['Birth_year'] = $result[0];
+      
       echo("<h1>Records of animal '$Ani_name' of '$Own_name' with Vat = $VAT </h1>\n");
 
       $query = "SELECT c.date_timestamp, c.VAT_client, c.VAT_vet 
@@ -54,7 +60,7 @@
       $args = [(string) $Ani_name, (string) $Own_name, (int) $VAT];
       $stmt  = connect_db($query, $args);
       if ($stmt->rowCount() !== 0){ 
-          
+
         $table_headers = ['Timestamp', 'VAT_client','VAT_vet', 'Blood Test'];
         $var_name = 'Con_Timestamp';
         $href = 'show_consult_descr.php';
@@ -72,10 +78,18 @@
 
       echo("<center><h2>Insert new consult for animal '$Ani_name'  with VAT_Owner: $VAT</h2></center>");
       
-      $form_key = ['date_timestamp', 's', 'o', 'a', 'p', 'Driver_VAT', 'Vet_VAT', 'Weight', 'Code'];
-      $form_types = ['datetime-local', 'text', 'text', 'text', 'text', 'number', 'number', 'number', 'text'];
+      $query = "SELECT VAT FROM _veterinary;";
+      $stmt = connect_db($query); 
+      
+      $VAT_vet = array();
+      while($row = $stmt->fetch())
+        $VAT_vet = array_merge($VAT_vet, [$row[0]]);
+
+      $form_key = ['date_timestamp', 's', 'o', 'a', 'p', 'Vet_VAT', 'Weight', 'Code'];
+      $form_types = ['datetime-local', 'text', 'text', 'text', 'text', 'select', 'number', 'text'];
       $form_action = "insert_consult.php";
-      create_form($form_key, $form_types, $form_action);
+      $default_value = [NULL, 'Subjective notes...', 'Objective notes...', 'Assessment notes...', 'Plan notes...', $VAT_vet, NULL, NULL];
+      create_form($form_key, $form_types, $form_action, $default_value);
       #############################
     
 

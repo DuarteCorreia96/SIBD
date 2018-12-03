@@ -6,7 +6,27 @@
     for($i = 0, $count = count($form_keys); $i <$count; $i++){
 
       $key_f = str_replace('_',' ',$form_keys[$i]);
-      if(strcmp($form_types[$i], 'year') == 0){
+
+      if( strcmp($form_types[$i], 'datetime-local') == 0 ){
+
+        $date = date('Y-m-d\TH:i'); //now
+        $date_min = date('Y-m-d\TH:i', strtotime('January 1 '.$_SESSION['Birth_year']));
+        echo("<div>");
+        echo("<label for='$form_keys[$i]'>$key_f: </label>");
+        echo("<input type='datetime-local' min='$date_min' max='$date' value='$date' id='$form_keys[$i]' name ='$form_keys[$i]'/>");
+        echo("</div>");
+
+      } elseif( strcmp($form_types[$i], 'select') == 0 ){
+
+        echo("<div>"); 
+        echo("<label for='$form_keys[$i]'>$key_f: </label>");
+        echo("<select name='$form_keys[$i]'>");
+        foreach ($default_values[$i] as $val)
+          echo("<option value='$val'>$val</option>");
+        echo("</select>");
+        echo("</div>"); 
+
+      } elseif( strcmp($form_types[$i], 'year') == 0 ){
 
         echo("<div>"); 
         echo("<label for='$form_keys[$i]'>$key_f: </label>"); 
@@ -18,9 +38,11 @@
         echo("<div>");
         if(strcmp($form_types[$i], 'hidden') != 0)
           echo("<label for='$form_keys[$i]'>$key_f: </label> ");
+
         echo("<input type='$form_types[$i]' id='$form_keys[$i]'  name ='$form_keys[$i]'");
         if(isset($default_values) && $default_values[$i] != NULL)
           echo("value='$default_values[$i]'");      
+
         echo("/></div>");
       }
     }
