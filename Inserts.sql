@@ -10,7 +10,7 @@ INSERT INTO _person(VAT, name,address_street ,address_city, address_zip  ) VALUE
 (006,   'José Nobre',           'Avenida de Macau',     'Sintra',       '2605-811'),
 (008,   'John Smith',           'Rua do Brasil',        'Lisboa',       '8666-783'),
 (016,   'Poupas Amarelo',       'Rua Sésamo',           'Amadora',      '9342-551'),
-(072,   'Maria da Silva',          'Rua de Cabo Verde',    'Lisboa',       '8752-562'),
+(072,   'Maria da Silva',       'Rua de Cabo Verde',    'Lisboa',       '8752-562'),
 (007,   'James Bond',           'Rua de Inglaterra',    'Porto',        '5678-923'),
 (018,   'Dinis',                'Rua de Inglaterra',    'Lisboa',       '4926-283'),
 (043,   'Vlad Yuri',            'Avenida Duque Ávila',  'Lisboa',       '4786-233'),
