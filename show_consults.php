@@ -99,7 +99,6 @@
       create_form($form_key, $form_types, $form_action, $default_value);
       #############################
     
-
       $last = $_SESSION['Last_page'];
       echo("<p></p><a href=$last> Go to Last page </a>");
       echo("<p></p><a href='start.php'> Go to Start </a>");

@@ -66,7 +66,7 @@
         WHERE cd.name = ? 
           AND cd.VAT_owner = ? 
           AND cd.date_timestamp = ?;";
-      $args  = [$Ani_name, $VAT, $Con_Time];
+      $args  = [(string) $Ani_name, (int) $VAT, $Con_Time];
       $stmt  = connect_db($query, $args);
 
       if ($stmt->rowCount() !== 0){ 
