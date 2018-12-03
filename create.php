@@ -9,11 +9,13 @@
 
       if( strcmp($form_types[$i], 'datetime-local') == 0 ){
 
-        $date = date('Y-m-d\TH:i'); //now
-        $date_min = date('Y-m-d\TH:i', strtotime('January 1 '.$_SESSION['Birth_year']));
-        echo("<div>");
-        echo("<label for='$form_keys[$i]'>$key_f: </label>");
-        echo("<input type='datetime-local' min='$date_min' max='$date' value='$date' id='$form_keys[$i]' name ='$form_keys[$i]'/>");
+        $date = date('Y-m-d');
+        $time = date('H:i');
+        $year_min = $_SESSION['Birth_year'];
+
+        echo("<div> date timestamp:");
+        echo("<input type='date' min='$year_min-01-01' max='$date' value='$date' id='date' name='date' style='width:150px' required/>");
+        echo("<input type='time' max='$time' value='$time' style='width:150px' id='time' name='time' required/>");
         echo("</div>");
 
       } elseif( strcmp($form_types[$i], 'select') == 0 ){
@@ -30,20 +32,20 @@
 
         echo("<div>"); 
         echo("<label for='$form_keys[$i]'>$key_f: </label>"); 
-        echo("<input type='number' min='1950' max='2018' value='2015' id='$form_keys[$i]' name ='$form_keys[$i]'/>");
+        echo("<input type='number' min='1950' max='2018' value='2015' id='$form_keys[$i]' name ='$form_keys[$i]' required/>");
         echo("</div>");
 
       } else {
 
         echo("<div>");
         if(strcmp($form_types[$i], 'hidden') != 0)
-          echo("<label for='$form_keys[$i]'>$key_f: </label> ");
+          echo("<label for='$form_keys[$i]'>$key_f: </label>");
 
         echo("<input type='$form_types[$i]' id='$form_keys[$i]'  name ='$form_keys[$i]'");
         if(isset($default_values) && $default_values[$i] != NULL)
           echo("value='$default_values[$i]'");      
 
-        echo("/></div>");
+        echo("required /></div>");
       }
     }
 

@@ -11,7 +11,7 @@ estar pre defenidor), ou um consult_diagnosis. E Se é apenas um, ou mais.
 - Inserir dropdown no driver VAT ao adicionar noova consulta (Assim impede erros pois temos a certeza que o client se encontra na lista).
 - Trigger para limitar a data da consulta.
 - Inserção dos blood tests.
-
+- dar para inserir vários consults_diagnosis seguidos (um de cada vez) na mesma consulta
 
 ###  HTML  
 - [x] 1ª parte
