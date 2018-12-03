@@ -54,7 +54,7 @@
                 AND c.VAT_client = ?
               )
             )
-          GROUP BY a.name;"
+          GROUP BY owner.name;"
         ;
         $args = [(string) $Own_name, (string) $Ani_name, (int) $VAT, (int) $VAT];
         $stmt = connect_db($query, $args); 
