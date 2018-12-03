@@ -3,9 +3,9 @@ INSERT INTO _person(VAT, name,address_street ,address_city, address_zip  ) VALUE
 (023, 'Marco Passarinho', 'Rua dos Piupius', 'Seixal', '3837-339'),
 (057, 'Ines Lopes', 'Rua Maria Adelaide', 'Portalegre','3289-292'),
 (001, 'Zé Manel','Rua de Angola', 'Sintra', '2556-283'),
-(002, 'Duarte Correia', 'Rua São Juliao', 'Lisboa', '4566-255'),
+(002, 'Duarte Correia', 'Rua Sao Juliao', 'Lisboa', '4566-255'),
 (003, 'Rafael Forte', 'Rua Fernandes', 'Lisboa', '2381-279'),
-(004, 'Gertrudes da Silva', 'Rua São Juliao', 'Lisboa', '4566-281'),
+(004, 'Gertrudes da Silva', 'Rua Sao Juliao', 'Lisboa', '4566-281'),
 (005, 'Marco Paulo', 'Rua Fernandes', 'Lisboa', '2381-233'),
 (006, 'José Nobre', 'Avenida de Macau', 'Sintra', '2605-811'),
 (008, 'John Smith', 'Rua do Brasil', 'Lisboa', '8666-783'),
@@ -126,7 +126,7 @@ INSERT INTO _diagnosis_code VALUES
 ('code3','pneumonia'),
 ('code5','kidney failure'),
 ('code6','tosse'),
-('code7','obstipação'),
+('code7','obstipacao'),
 ('code8','gripe');
 
 /*Consult_diagnosis*/
@@ -150,7 +150,7 @@ INSERT INTO _medication VALUES
 
 /*Prescription*/
 INSERT INTO _prescription (code, name, VAT_owner, date_timestamp, name_med, lab, dosage) VALUES 
-('code3', 'Totti', 004, '2017-11-03  22:34:56', 'AntiEstupidez',    'LabEducaçao',  '75mg'),
+('code3', 'Totti', 004, '2017-11-03  22:34:56', 'AntiEstupidez',    'LabEducacao',  '75mg'),
 ('code1', 'Totti', 004, '2017-11-03  22:34:56', 'Bruffen',          'Lab1',         '500mg'),
 ('code1', 'Diego', 008, '2017-08-23  12:55:08', 'Paracetamol',      'LabCORP',      '100mg'),
 ('code2', 'Diego', 008, '2017-08-23  12:55:08', 'Paracetamol',      'LabCORP',      '100mg'),

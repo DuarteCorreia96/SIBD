@@ -78,6 +78,7 @@
 
       echo("<center><h2>Insert new consult for animal '$Ani_name'  with VAT_Owner: $VAT</h2></center>");
       
+      # Ver o vat de todos os vets
       $query = "SELECT VAT FROM _veterinary;";
       $stmt = connect_db($query); 
       
@@ -85,6 +86,7 @@
       while($row = $stmt->fetch())
         $VAT_vet = array_merge($VAT_vet, [$row[0]]);
 
+      # Ver todos os diagnosis codes
       $query = "SELECT code FROM _diagnosis_code;";
       $stmt = connect_db($query); 
       
