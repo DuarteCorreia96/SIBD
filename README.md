@@ -13,7 +13,10 @@
 ## To do List
 - Perguntar ao Professor se na criação da consulta se cria um código (nao faz muito sentido, os codigos deviam
 estar pre defenidor), ou um consult_diagnosis. E Se é apenas um, ou mais.
-- Inserir dropdown no driver VAT ao adicionar noova consulta
+- Inserir dropdown no driver VAT ao adicionar noova consulta (Assim impede erros pois temos a certeza que o client se encontra na lista).
+- Trigger para limitar a data da consulta.
+- Inserção dos blood tests.
+
 
 ###  HTML  
 - [x] 1ª parte
