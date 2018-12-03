@@ -85,10 +85,17 @@
       while($row = $stmt->fetch())
         $VAT_vet = array_merge($VAT_vet, [$row[0]]);
 
+      $query = "SELECT code FROM _diagnosis_code;";
+      $stmt = connect_db($query); 
+      
+      $codes = array();
+      while($row = $stmt->fetch())
+        $codes = array_merge($codes, [$row[0]]);
+
       $form_key = ['date_timestamp', 's', 'o', 'a', 'p', 'Vet_VAT', 'Weight', 'Code'];
-      $form_types = ['datetime-local', 'text', 'text', 'text', 'text', 'select', 'number', 'text'];
+      $form_types = ['datetime-local', 'text', 'text', 'text', 'text', 'select', 'number', 'select'];
       $form_action = "insert_consult.php";
-      $default_value = [NULL, 'Subjective notes...', 'Objective notes...', 'Assessment notes...', 'Plan notes...', $VAT_vet, NULL, NULL];
+      $default_value = [NULL, 'Subjective notes...', 'Objective notes...', 'Assessment notes...', 'Plan notes...', $VAT_vet, NULL, $codes];
       create_form($form_key, $form_types, $form_action, $default_value);
       #############################
     
