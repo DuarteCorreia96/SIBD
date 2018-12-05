@@ -2,7 +2,7 @@
   session_start(); 
   include_once "connect.php";
   
-  $vars_names = [ 'Animal_Name', 'Owner_VAT', 'date_timestamp',  'Num', 'Procedure_Descrip', 'VAT_Assistant', 'Type', 'Indicators_Name'];
+  $vars_names = [ 'Animal_Name', 'Owner_VAT', 'Con_timestamp',  'Num', 'Procedure_Descrip', 'VAT_Assistant', 'Type'];
   foreach ($vars_names as $key) {
     if(!empty($_REQUEST[$key])){
       $_SESSION[$key] = $_REQUEST[$key];
@@ -16,7 +16,7 @@
   $Num = $_SESSION['Num'];
   $Procedure_Descrip = $_SESSION['Procedure_Descrip'];
   $VAT_Assistant = $_SESSION['VAT_Assistant'];
-  $Type = $_SESSION['Type'];   
+  $Type = $_SESSION['Type'];
 
   #Inserir dados na Database - Consulta, e diagnosis code
   $query1 = "INSERT INTO _procedure (name, VAT_owner, date_timestamp , num, description) VALUES ( ? , ?, ?, ?, ?) ;";
@@ -31,19 +31,8 @@
   $arguments = array($args1, $args2, $args3);
   $querys = array($query1, $query2, $query3);
 
-  $Indicators_Name = unserialize(base64_decode($_SESSION['Indicators_Name']));   
-  $query = "INSERT INTO _produced_indicator (name, VAT_owner, date_timestamp , num, indicator_name, value) VALUES ( ? , ?, ?, ?, ?, ?) ;";
-  foreach ($Indicators_Name as $indicator){
-    
-    $indicator_name = str_replace('_',' ',$indicator); 
-    $args = [(string) $Animal_name, (int) $Owner_VAT,  $date_timestamp, (int) $Num, (string) $indicator_name, (int) $_REQUEST[$indicator]];
-
-    $querys = array_merge($querys, [$query]);
-    $arguments = array_merge($arguments, [$args]);
-  }
-
   do_transaction($querys, $arguments);
 
-  header("Location: show_consults.php");
+  header("Location: form_indicator_blood.php");
 ?>
 

@@ -175,7 +175,7 @@ INSERT INTO _procedure (name,VAT_owner,date_timestamp,num) VALUES
 INSERT INTO _test_procedure (name,VAT_owner,date_timestamp,num,type) VALUES
 ('Teco',        082, '2017-01-03  10:24:26',1,'blood'),
 ('Michu',       007, '2017-06-05  10:10:10',1,'blood'),
-('Amilcar',     018, '2017-10-05  12:24:46',1 , 'urine'),
+('Amilcar',     018, '2017-10-05  12:24:46',1 ,'urine'),
 ('Amilcar',     018, '2017-10-05  12:24:46',2, 'blood');
 
 
@@ -194,8 +194,8 @@ INSERT INTO _indicator(name, reference_value, units) VALUES
 INSERT INTO _produced_indicator(name,VAT_owner,date_timestamp,num,indicator_name,value) VALUES
 ('Teco',        082, '2017-01-03  10:24:26',1, 'White Blood Cells', 87),
 ('Teco',        082, '2017-01-03  10:24:26',1, 'Neutrophils',       130),
-('Teco',        082, '2017-01-03  10:24:26',1, 'creatine level',    0.8),
-('Amilcar',     018, '2017-10-05  12:24:46',1 , 'Monocytes',         110),
-('Amilcar',     018, '2017-10-05  12:24:46',2, 'indicadorE',        187),
-('Amilcar',     018, '2017-10-05  12:24:46',2, 'creatine level',    1.3),
-('Michu',       007, '2017-06-05  10:10:10',1, 'creatine level',    1.2);
+('Teco',        082, '2017-01-03  10:24:26',1, 'Lymphocytes',       0.8),
+('Amilcar',     018, '2017-10-05  12:24:46',1 ,'Monocytes',         110),
+('Amilcar',     018, '2017-10-05  12:24:46',2, 'White Blood Cells', 187),
+('Amilcar',     018, '2017-10-05  12:24:46',2, 'Monocytes',         1.3),
+('Michu',       007, '2017-06-05  10:10:10',1, 'Lymphocytes',       1.2);

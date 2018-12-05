@@ -6,8 +6,13 @@
     for($i = 0, $count = count($form_keys); $i <$count; $i++){
 
       $key_f = str_replace('_',' ',$form_keys[$i]);
+      if( strcmp($form_types[$i], 'show') == 0 ){
 
-      if( strcmp($form_types[$i], 'datetime-local') == 0 ){
+        echo("<div> <p> $form_keys[$i]: $default_values[$i] </p>");
+        echo("<input type='hidden' id='$form_keys[$i]'  name ='$form_keys[$i]' value='$default_values[$i]/>");
+        echo("</div>");
+
+      } elseif( strcmp($form_types[$i], 'datetime-local') == 0 ){
 
         $date = date('Y-m-d');
         $time = date('H:i');
@@ -44,8 +49,8 @@
         echo("<input type='$form_types[$i]' id='$form_keys[$i]'  name ='$form_keys[$i]'");
         if(isset($default_values) && $default_values[$i] != NULL)
           echo("value='$default_values[$i]'");      
-
         echo("required /></div>");
+
       }
     }
 
