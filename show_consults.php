@@ -47,14 +47,11 @@
       echo("<h1>Records of animal '$Ani_name' of '$Own_name' with Vat = $VAT </h1>\n");
 
       $query = "SELECT c.date_timestamp, c.VAT_client, c.VAT_vet 
-                FROM _person p, _animal a, _consult c, _client cl
-                WHERE a.name = ?
-                  AND p.name LIKE CONCAT('%', ?, '%')
-                  AND cl.VAT = ?
-                  AND cl.VAT = p.VAT
-                  AND cl.VAT = a.VAT
-                  AND a.name = c.name
-                  AND (p.VAT = c.VAT_owner OR p.VAT = c.VAT_client);"
+                FROM _consult c, _person p
+                WHERE c.name = ?
+                  AND p.name = ?
+                  AND c.VAT_owner = ?
+                  AND c.VAT_owner = p.VAT;"
       ;
 
       $args = [(string) $Ani_name, (string) $Own_name, (int) $VAT];
