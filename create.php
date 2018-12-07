@@ -23,7 +23,7 @@
         echo("<div>");
         echo("<label for='date'>date timestamp: </label>");
         echo("<input type='date' min='$year_min-01-01' max='$date' value='$date' id='date' name='date' style='width:125px' required/>");
-        echo("<input type='time' value='$time' style='width:125px' id='time' name='time' required/>");
+        echo("<input type='time' max='$time' value='$time' style='width:125px' id='time' name='time' required/>");
         echo("</div>");
 
       } elseif( strcmp($form_types[$i], 'select') == 0 ){
