@@ -18,19 +18,20 @@
       include_once "create.php";
       include_once "connect.php";
       
-      $query = "SELECT p.indicator_name FROM _produced_indicator AS p NATURAL JOIN _test_procedure AS t WHERE t.type LIKE '%blood%' GROUP BY p.indicator_name;";
+      # Ver todos os diagnosis codes
+      $query = "SELECT code FROM _diagnosis_code;";
       $stmt = connect_db($query); 
       
-      $Indicators = array();
+      $codes = array();
       while($row = $stmt->fetch())
-      $Indicators = array_merge($Indicators, [$row[0]]);
+        $codes = array_merge($codes, [$row[0]]);
 
       echo("<center><h2>Insert indicator information</h2></center>");
 
-      $form_key = ['Indicator_Name','Indicator_Value'];
-      $form_types = ['select','number'];
-      $form_action = "insert_indicator_blood.php";
-      $default_values = [$Indicators, NULL];
+      $form_key = ['Diagnosis_Code'];
+      $form_types = ['select'];
+      $form_action = "insert_consult_diagnosis.php";
+      $default_values = [$codes];
       create_form($form_key, $form_types, $form_action, $default_values);
       
       #######################################   

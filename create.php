@@ -6,9 +6,11 @@
     for($i = 0, $count = count($form_keys); $i <$count; $i++){
 
       $key_f = str_replace('_',' ',$form_keys[$i]);
+
       if( strcmp($form_types[$i], 'show') == 0 ){
 
-        echo("<div> <p> $form_keys[$i]: $default_values[$i] </p>");
+        echo("<div>");
+        echo("<label for='$form_keys[$i]'> $form_keys[$i]: $default_values[$i]   </label><p></p>");
         echo("<input type='hidden' id='$form_keys[$i]'  name ='$form_keys[$i]' value='$default_values[$i]/>");
         echo("</div>");
 
@@ -18,9 +20,10 @@
         $time = date('H:i');
         $year_min = $_SESSION['Birth_year'];
 
-        echo("<div> date timestamp:");
-        echo("<input type='date' min='$year_min-01-01' max='$date' value='$date' id='date' name='date' style='width:150px' required/>");
-        echo("<input type='time' max='$time' value='$time' style='width:150px' id='time' name='time' required/>");
+        echo("<div>");
+        echo("<label for='date'>date timestamp: </label>");
+        echo("<input type='date' min='$year_min-01-01' max='$date' value='$date' id='date' name='date' style='width:125px' required/>");
+        echo("<input type='time' value='$time' style='width:125px' id='time' name='time' required/>");
         echo("</div>");
 
       } elseif( strcmp($form_types[$i], 'select') == 0 ){

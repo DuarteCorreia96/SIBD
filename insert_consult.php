@@ -3,7 +3,7 @@
   include_once "connect.php";
   include_once "create.php";
   
-  $vars_names = [ 'Animal_Name', 'Owner_VAT', 'date_timestamp',  's', 'o', 'a', 'p', 'Client_VAT', 'Vet_VAT', 'Weight', 'Code'];
+  $vars_names = [ 'Animal_Name', 'Owner_VAT',  's', 'o', 'a', 'p', 'Client_VAT', 'Vet_VAT', 'Weight'];
   foreach ($vars_names as $key) {
     if(!empty($_REQUEST[$key])){
       $_SESSION[$key] = $_REQUEST[$key];
@@ -21,11 +21,11 @@
   $Owner_name = $_SESSION['Owner_Name'];   
   $Vet_VAT = $_SESSION['Vet_VAT'];
   $Weight = $_SESSION['Weight'];
-  $Code = $_SESSION['Code'];
 
   $date = $_REQUEST['date'];
   $time = $_REQUEST['time'];         
   $date_timestamp = $date." ".$time;
+  $_SESSION['Con_Timestamp'] = $date_timestamp;
 
   #Inserir dados na Database - Consulta, e diagnosis code
   $query = "INSERT INTO _consult (name, VAT_owner, date_timestamp , s, o, a, p, VAT_client, VAT_vet, weight) VALUES
@@ -36,10 +36,6 @@
             (int) $Client_VAT, (int) $Vet_VAT, (int) $Weight];
   $stmt = connect_db($query, $args);
 
-  $query = "INSERT INTO _consult_diagnosis (code, name, VAT_owner, date_timestamp) VALUES ( ? , ?, ?, ?) ;";
-  $args = [(string) $Code, (string) $Animal_name , (int) $Owner_VAT, (string) $date_timestamp ];
-  $stmt = connect_db($query, $args);
-
-  header("Location: show_consults.php");
+  header("Location: form_consult_diagnosis.php");
 ?>
 

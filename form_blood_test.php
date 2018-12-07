@@ -25,7 +25,7 @@
       
       $VAT_assis = array();
       while($row = $stmt->fetch())
-      $VAT_assis = array_merge($VAT_assis, [$row[0]]);
+        $VAT_assis = array_merge($VAT_assis, [$row[0]]);
       
       $Animal_name = $_SESSION['Animal_Name'];
       $Owner_VAT = $_SESSION['Owner_VAT'];      
@@ -40,10 +40,10 @@
       echo("<center><h2>Insert Blood-Test information</h2></center>");
 
       $Indicators = ['White_Blood_Cells', 'Neutrophils', 'Lymphocytes', 'Monocytes'];
-      $form_key = array_merge(['Num', 'Procedure_Descr', 'VAT_Assistant', 'Type']);
-      $form_types = ['show', 'text', 'select', 'show'];
+      $form_key = array_merge(['Num', 'Type', 'Procedure_Descrip', 'VAT_Assistant'], $Indicators, ['Indicators_Name']);
+      $form_types = ['show', 'show', 'text', 'select', 'number', 'number', 'number', 'number', 'hidden'];
       $form_action = "insert_procedure.php";
-      $default_values = [$Num, NULL, $VAT_assis, 'blood'];
+      $default_values = [$Num, 'blood', NULL, $VAT_assis, 10, 20, 30, 40, base64_encode(serialize($Indicators))];
       create_form($form_key, $form_types, $form_action, $default_values);
       
       #######################################   
