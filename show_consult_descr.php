@@ -53,7 +53,7 @@
 
       echo("<div class='hr'></div>");
       echo("<h2> Information obtained in consult:</h2>");
-      echo("<p>Weight of the animal: $result[3] kilos </p>");
+      echo("<p>Weight of the animal: $result[3] [kg] </p>");
       echo("<p>Subjective Notes: $result[5] </p>");
       echo("<p>Objective Notes: $result[6] </p>");
       echo("<p>Assessment Notes: $result[7] </p>");
