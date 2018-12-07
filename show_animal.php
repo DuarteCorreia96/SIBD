@@ -98,10 +98,11 @@
             $Own_name = $_SESSION['Owner_Name'];
 
             echo("<center><h2>Insert new animal for client '$Own_name' with VAT: $VAT</h2></center>");
-            $form_key = ['Animal_Name', 'Animal_Race','Birth_Year'];
-            $form_types = ['text', 'text', 'year'];
+            $form_key = ['Animal_Name', 'Animal_Race','Birth_Year','Color','Gender'];
+            $form_types = ['text', 'text', 'year','text','select'];
             $form_action = "insert_animal.php";
-            create_form($form_key, $form_types, $form_action);
+            $default_values = [NULL, NULL, NULL, 'Brown', ['M','F']];
+            create_form($form_key, $form_types, $form_action, $default_values);
 
           } else {
 
