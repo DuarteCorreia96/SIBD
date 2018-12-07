@@ -28,6 +28,7 @@
       
       $Own_name = $_SESSION['Owner_Name'];
       $Ani_name = $_SESSION['Animal_Name'];
+      $Client_VAT = $_SESSION['Client_VAT'];
       
       #Get the VAT from the owner
       $query = "SELECT p.VAT FROM  _person p, _client cl WHERE p.name = ? AND p.VAT = cl.VAT;";
@@ -83,10 +84,10 @@
       while($row = $stmt->fetch())
         $VAT_vet = array_merge($VAT_vet, [$row[0]]);
 
-      $form_key = ['date_timestamp', 's', 'o', 'a', 'p', 'Vet_VAT', 'Weight'];
-      $form_types = ['datetime-local', 'text', 'text', 'text', 'text', 'select', 'number'];
+      $form_key = ['Client VAT','date_timestamp', 's', 'o', 'a', 'p', 'Vet_VAT', 'Weight'];
+      $form_types = ['show', 'datetime-local', 'text', 'text', 'text', 'text', 'select', 'number'];
       $form_action = "insert_consult.php";
-      $default_value = [NULL, 'Subjective notes...', 'Objective notes...', 'Assessment notes...', 'Plan notes...', $VAT_vet, NULL];
+      $default_value = [$Client_VAT,NULL, 'Subjective notes...', 'Objective notes...', 'Assessment notes...', 'Plan notes...', $VAT_vet, NULL];
       create_form($form_key, $form_types, $form_action, $default_value);
       #############################
     
