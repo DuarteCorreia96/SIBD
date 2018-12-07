@@ -2,7 +2,7 @@
   session_start(); 
   include_once "connect.php";
   
-  $vars_names = [ 'Animal_Name', 'Owner_VAT', 'Con_Timestamp',  'Num', 'Procedure_Descrip', 'VAT_Assistant', 'Type'];
+  $vars_names = [ 'Animal_Name', 'Owner_VAT', 'Con_Timestamp',  'Num', 'Procedure_Descrip', 'VAT_Assistant', 'Type', 'Indicators_Name'];
   foreach ($vars_names as $key) {
     if(!empty($_REQUEST[$key])){
       $_SESSION[$key] = $_REQUEST[$key];

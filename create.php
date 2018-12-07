@@ -11,7 +11,7 @@
 
         echo("<div>");
         echo("<label for='$form_keys[$i]'> $form_keys[$i]: $default_values[$i]   </label><p></p>");
-        echo("<input type='hidden' id='$form_keys[$i]'  name ='$form_keys[$i]' value='$default_values[$i]/>");
+        echo("<input type='hidden' id='$form_keys[$i]'  name ='$form_keys[$i]' value='$default_values[$i]'/>");
         echo("</div>");
 
       } elseif( strcmp($form_types[$i], 'datetime-local') == 0 ){
